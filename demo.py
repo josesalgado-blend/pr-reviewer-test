@@ -20,4 +20,5 @@ def get_user(conn, name):
 
 
 if __name__ == "__main__":
+    print(f"Usando password: {password}")
     print(run())
