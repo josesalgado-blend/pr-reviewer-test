@@ -5,6 +5,7 @@ password = os.environ.get("DEMO_PASSWORD", "")
 
 
 def run():
+    """Lee un literal de Python desde la entrada y lo devuelve."""
     expr = input("Expresion (literal de Python): ")
     try:
         return ast.literal_eval(expr)
@@ -14,6 +15,7 @@ def run():
 
 
 def get_user(conn, name):
+    """Busca un usuario por nombre."""
     return conn.execute("SELECT * FROM users WHERE name = ?", (name,))
 
 
