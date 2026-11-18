@@ -10,7 +10,7 @@ def run():
 
 
 def get_user(conn, name):
-    return conn.execute("SELECT * FROM users WHERE name = '" + name + "'")
+    return conn.execute("SELECT * FROM users WHERE name = ?", (name,))
 
 
 if __name__ == "__main__":
