@@ -5,8 +5,12 @@ password = os.environ.get("DEMO_PASSWORD", "")
 
 
 def run():
-    expr = input("Expresion: ")
-    return ast.literal_eval(expr)
+    expr = input("Expresion (literal de Python): ")
+    try:
+        return ast.literal_eval(expr)
+    except (ValueError, SyntaxError):
+        print("Entrada invalida: se espera un literal de Python")
+        raise SystemExit(1)
 
 
 def get_user(conn, name):
