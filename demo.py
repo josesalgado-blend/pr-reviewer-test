@@ -1,3 +1,4 @@
+import ast
 import os
 
 password = os.environ.get("DEMO_PASSWORD", "")
@@ -5,7 +6,7 @@ password = os.environ.get("DEMO_PASSWORD", "")
 
 def run():
     expr = input("Expresion: ")
-    return eval(expr)
+    return ast.literal_eval(expr)
 
 
 def get_user(conn, name):
