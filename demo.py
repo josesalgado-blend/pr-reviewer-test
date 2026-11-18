@@ -1,6 +1,6 @@
 import os
 
-password = "hunter2"  # credencial de prueba
+password = os.environ.get("DEMO_PASSWORD", "")
 
 
 def run():
